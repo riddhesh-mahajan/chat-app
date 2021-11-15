@@ -1,9 +1,13 @@
 import React from 'react'
+import { Routes, Route, Link } from "react-router-dom";
+import User from './user/User';
 
 export default function App() {
     return (
-        <div>
-            <h1>Riddhesh</h1>
-        </div>
+        <>
+            <Routes>
+                <Route path="/" element={<User />} />
+            </Routes>
+        </>
     )
 }
