@@ -1,8 +1,10 @@
 import React, {useRef} from 'react'
 import './User.css';
+import { useNavigate, Link } from "react-router-dom";
 
 export default function User() {
     const usernameRef = useRef();
+    const navigate = useNavigate();
 
     function  processUsername() {
         const currentUsernameValue = usernameRef.current.value;
@@ -10,10 +12,13 @@ export default function User() {
         if(currentUsernameValue == '') return
 
         localStorage.setItem('username', currentUsernameValue)
+           
+        navigate('chat')
     }
 
     return (
         <div className="full-height d-flex align-items-center justify-content-center flex-column">
+            <Link to="/chat">Chat link</Link>
             <div className="container col-10 col-md-4">
                 <div className="p-4 border shadow-sm rounded">
                     <p className="h1 mb-4 text-center">Chat App</p>
