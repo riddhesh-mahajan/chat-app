@@ -1,0 +1,15 @@
+.send_chat_bubble_bg{
+    background-color: #ebebeb;
+}
+
+.receive_chat_bubble_bg{
+    background-color: #caeece;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.fs-7{
+    font-size: 0.6rem;
+}

@@ -1,6 +1,7 @@
 import React, {useRef, useState, useEffect} from 'react'
 import consumer from "../../channels/consumer"
 import { v4 as uuidv4 } from 'uuid';
+import './ChatIndex.css'
 
 let chatRoomChannel = null;
 
@@ -40,7 +41,7 @@ export default function ChatIndex() {
         const newMessage = newMessageRef.current.value;
         if(newMessage == '') return
         chatRoomChannel.speak(newMessage);
-        appendMessage({ username: getUsername(), message: newMessage })
+        appendMessage({ username: getUsername(), message: newMessage, time:  getCurrentDate()})
     }
 
     function appendMessage(messageData){
@@ -49,16 +50,41 @@ export default function ChatIndex() {
         })
     }
 
+    function getCurrentDate(separator='-'){
+        let newDate = new Date()
+        let date = newDate.getDate();
+        let month = newDate.getMonth() + 1;
+        let year = newDate.getFullYear();
+        
+        let hours = newDate.getHours();
+        let minutes = newDate.getMinutes();
+
+        return `${date}${separator}${month<10?`0${month}`:`${month}`}${separator}${year} ${hours}:${minutes}`
+    }
+
     return (
-        <div className="container">
+        <div className="container col-8">
             <h1>Chat index</h1>
 
             {
-                messages.map(messageData=>{
-                    return (
-                        <div key={uuidv4()} className="border shadow">
-                            <p>{messageData.username}</p>
-                            <p>{messageData.message}</p>
+                messages.map((messageData, index)=>{
+                    return (   
+                        <div key={uuidv4()} className={"col-6 " + (messageData.username == getUsername() ? 'ms-auto' : 'me-auto')}>
+                            {(() => {
+                                if(index > 0){
+                                    if(messages[index-1].username != messages[index].username){
+                                        return (<p className="fs-6 fw-bold mb-0">{messageData.username}</p>)
+                                    }
+                                }else{
+                                    return (<p className="fs-6 fw-bold mb-0">{messageData.username}</p>)
+                                }
+                            })()}
+                            
+                            
+                            <div className={"d-flex border shadow-sm pt-2 pb-2 ps-3 mt-1 text-justify " + (messageData.username == getUsername() ? 'receive_chat_bubble_bg' : 'send_chat_bubble_bg')}>
+                                <p className="mb-0">{messageData.message}</p>
+                                <p className="fs-7 mb-0 mt-1 ms-auto me-2 text-secondary">{messageData.time}</p>                             
+                            </div>
                         </div>
                     )
                 })

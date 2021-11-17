@@ -18,7 +18,6 @@ export default function User() {
 
     return (
         <div className="full-height d-flex align-items-center justify-content-center flex-column">
-            <Link to="/chat">Chat link</Link>
             <div className="container col-10 col-md-4">
                 <div className="p-4 border shadow-sm rounded">
                     <p className="h1 mb-4 text-center">Chat App</p>
