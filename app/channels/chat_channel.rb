@@ -10,6 +10,8 @@ class ChatChannel < ApplicationCable::Channel
   def speak(data)
     puts(data)
     puts("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
-    ActionCable.server.broadcast("chat_channel", { username: data["username"], message: data["message"] })
+    t = Time.current
+    puts(t)
+    ActionCable.server.broadcast("chat_channel", { username: data["username"], message: data["message"], datetime: t })
   end
 end
