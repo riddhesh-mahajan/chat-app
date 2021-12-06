@@ -1,15 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from '../components/App'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/*" element={<App />} />
       </Routes>
-    </BrowserRouter>,
+    </HashRouter>,
     document.body.appendChild(document.createElement('div')),
   )
 })

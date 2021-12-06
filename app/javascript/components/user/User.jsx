@@ -18,9 +18,9 @@ export default function User() {
 
     return (
         <div className="full-height d-flex align-items-center justify-content-center flex-column">
-            <div className="container col-10 col-md-4">
-                <div className="p-4 border shadow-sm rounded">
-                    <p className="h1 mb-4 text-center">Chat App</p>
+            <div className="container col-11 col-md-4">
+                <div className="p-4 shadow-sm rounded">
+                    <p className="fw-bold fs-1 mb-3 text-center">Chat App</p>
                     <input ref={usernameRef} type="text" className="form-control form-control-lg mb-2" placeholder="Enter username" />
                     <button onClick={processUsername} className="btn btn-primary w-100">Start chat</button>
                 </div>
