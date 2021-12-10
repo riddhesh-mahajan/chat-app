@@ -1,6 +1,10 @@
 # Chat App
 
+[![Website](https://img.shields.io/website?style=for-the-badge&up_message=Live%20demo&url=https%3A%2F%2Fchat-riddhesh.herokuapp.com%2F%23)](https://chat-riddhesh.herokuapp.com/#) &nbsp; ![GitHub repo size](https://img.shields.io/github/repo-size/riddhesh-mahajan/chat-app?style=for-the-badge)
+
 Chat app built using Ruby on Rails channels, React and Bootstrap.
+
+
 
 &emsp;
 # Prerequisites
