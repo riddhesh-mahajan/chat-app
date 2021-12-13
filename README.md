@@ -69,3 +69,10 @@ rails s
 | Ruby on Rails     | Ruby on Rails is a model–view–controller framework, providing default structures for a database, a web service, and web pages. |
 | React | React is a free and open-source front-end JavaScript library for building user interfaces based on UI components. |
 | Bootstrap  | Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development.  |
+
+
+&emsp;
+# Live demo
+[https://chat-riddhesh.herokuapp.com/#](https://chat-riddhesh.herokuapp.com/#)
+
+![https://chat-riddhesh.herokuapp.com/#](/docs/images/chat-app.PNG)
